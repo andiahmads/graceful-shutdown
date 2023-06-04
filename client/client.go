@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"sync"
 	"time"
@@ -24,7 +25,7 @@ func main() {
 }
 
 func checkReadiness(id string) {
-	const url = "http://0.0.0.0:3001/v1/readiness"
+	const url = "http://0.0.0.0:8086/fmc/payment/check-healt"
 	client := &http.Client{}
 	fmt.Println(" START REQUEST ID:", id)
 
